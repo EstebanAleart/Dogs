@@ -4,10 +4,10 @@ const axios=require("axios");
 
 const URL="https://api.thedogapi.com/v1/breeds/search?q="
 
-const getDogByQuery=async (req,res)=>{
+const getDogByidRaza=async (req,res)=>{
     try {
-        const {breed}=req.params;
-        const response= await axios.get(`${URL}+${breed}`);
+        const {idRaza}=req.params; 
+        const response= await axios.get(`${URL}+${idRaza}`);
         const responseData=response.data 
         if(Array.isArray(responseData) && responseData.length > 0){
             const dogs=responseData.map(dog=>{
@@ -22,4 +22,4 @@ const getDogByQuery=async (req,res)=>{
     }
 }
 
-module.exports= getDogByQuery
+module.exports= getDogByidRaza
