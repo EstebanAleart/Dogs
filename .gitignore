@@ -108,3 +108,6 @@ package-lock.json
 
 
 .env
+
+Readme.md
+.gitignore
