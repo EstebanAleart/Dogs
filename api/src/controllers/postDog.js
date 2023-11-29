@@ -3,12 +3,14 @@ const {Dog}=require("../db");
 const postDog= async (req, res)=>{
     try {
         const { name, image, height, weight, life_span}= req.body
+        const offset=264;
     if ( !name || !height || !weight || !life_span || !image ) {
         return res.status(401).json({ error: "Undefined data" });
       }
       const [newDog, created] = await Dog.findOrCreate({
-        where: {  name, height, weight, image, life_span },
+        where: {  name:name.trim(), height, weight, image, life_span },
       });
+      await Dog.update({ id: newDog.id + offset }, { where: { id: newDog.id } });
       if (!created) {
         return res.status(409).json({ error: "This dog exist in DB" });
       }

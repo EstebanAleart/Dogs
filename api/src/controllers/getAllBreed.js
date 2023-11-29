@@ -6,11 +6,13 @@ const URL="https://api.thedogapi.com/v1/breeds/"
 const getAllBreed= async (req, res)=>{
     try {
         const response = await axios.get(URL);
-        responseData=response.data
-        const breedSet = new Set(responseData.map((breed) => breed.breed_group));
+        const responseData=response.data
+        const externalApi = responseData.map((dog) => {
+          return { id, name, image, height, weight, life_span, breed_group }=dog;
+          
+        });
         
-        const uniqueBreeds = Array.from(breedSet);
-        return res.status(200).json(uniqueBreeds);
+        externalApi.length > 0 ? res.status(200).json(externalApi) : res.status(404).json({ error: "Not Found" });
       } catch (error) {
         return res.status(500).send(error.message);
       }
