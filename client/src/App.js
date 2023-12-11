@@ -1,10 +1,21 @@
 import './App.css';
 
+import React from "react";
+
+import { Route, Switch } from "react-router-dom";
+import LandingPage from "./views/landing/LandingPage";
+import HomePage from "./views/HomePage";
+import DetailPage from "./components/DetailPage";
+import FormPage from "./components/FormPage";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Dogs</h1>
-    </div>
+    <Switch>
+    <Route exact path='/' component={LandingPage} />
+    <Route exact path='/home' component={HomePage} />
+    <Route exact path='/detail/:id' component={DetailPage} />
+    <Route exact path='/create' component={FormPage} /> 
+    </Switch>   
   );
 }
 

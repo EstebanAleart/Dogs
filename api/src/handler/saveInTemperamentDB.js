@@ -2,10 +2,10 @@ const {Temperament}=require("../db");
 
 const saveInTemperamentDB=async (array)=>{
  try {
-    for (let a of array){
+    for (let temp of array){
         
         await Temperament.findOrCreate({
-            where:{name:a}
+            where:{name:temp}
         })
     }
  } catch (error) {
