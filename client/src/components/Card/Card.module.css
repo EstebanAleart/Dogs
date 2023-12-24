@@ -11,10 +11,11 @@
     justify-content: space-evenly;
     border-radius: 1em;
     align-items: center;
-    height: 500px;
+    height: 450px;
     width: 300px;
     align-items: flex-start;
     flex-direction: column;
+    margin-top: 0px;
    }
    
    .card::after {
@@ -32,6 +33,14 @@
     background: var(--background);
     transition: opacity .5s;
    }
+   .card:hover::after {
+    box-shadow: 0 0 10px #f7ba2b, 0 0 20px #f7ba2b, 0 0 40px #f7ba2b, 0 0 80px #f7ba2b, 0 0 120px #f7ba2b, 0 0 160px #f7ba2b;
+   }
+
+   .div1{
+    margin-top: 0%;
+    margin-left: 10px;
+   }
    
    .img{
     object-fit: contain;
@@ -43,5 +52,26 @@
 
 .p {
     word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Añadido */
+    font-size: 1.2rem;
+    white-space: normal;
 }
 
+.link {
+    text-decoration: none;
+}
+
+
+.id{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: right;
+    margin-right: 10px;
+}
+.id:hover{
+    color: #ffffff;
+}

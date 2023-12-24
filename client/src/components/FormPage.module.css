@@ -1,0 +1,65 @@
+.container{
+    --s: 50px;
+    --c: #191b22;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+    background: 
+      radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+      radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+      radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+      radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+      repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+      radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    /* background-attachment: fixed; */
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    gap: 10px;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+   
+  }
+  .title{
+    font-size: 4rem;
+    text-shadow: 0 0 10px #f7ba2b, 0 0 20px #f7ba2b, 0 0 40px #f7ba2b, 0 0 80px #f7ba2b, 0 0 120px #f7ba2b, 0 0 160px #f7ba2b;
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    font-size: 1rem; 
+    font-weight: 700;
+    color:#f7ba2b;
+    
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .formSubmit {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 160, 17);
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+  .formSubmit:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(255, 160, 17);
+    box-shadow: 0 0 10px #f7ba2b, 0 0 20px #f7ba2b, 0 0 40px #f7ba2b, 0 0 80px #f7ba2b, 0 0 120px #f7ba2b, 0 0 160px #f7ba2b;
+  }

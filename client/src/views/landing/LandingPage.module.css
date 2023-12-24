@@ -82,13 +82,16 @@
     background-color: #f7ba2b;
     border-radius: 1em;
     text-decoration: none;
+    border: solid 1px white;
 }
 
 .button:hover{
-  border-color: #191b22;
-  border: solid 5px;
-  cursor: pointer;
-}
+    cursor: pointer;
+    background-color: white;
+    color: rgb(255, 160, 17);
+    box-shadow: 0 0 10px #f7ba2b, 0 0 20px #f7ba2b, 0 0 40px #f7ba2b, 0 0 80px #f7ba2b, 0 0 120px #f7ba2b, 0 0 160px #f7ba2b;
+  }
+
 
 .button:active{
     transform: scale(0.9);

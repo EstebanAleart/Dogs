@@ -2,20 +2,32 @@ import './App.css';
 
 import React from "react";
 
-import { Route, Switch } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import LandingPage from "./views/landing/LandingPage";
 import HomePage from "./views/HomePage";
 import DetailPage from "./components/DetailPage";
 import FormPage from "./components/FormPage";
+import style from "./app.module.css";
+import Navbar from "./components/NavBar/NavBar";
 
 function App() {
+  const { pathname } = useLocation();
   return (
-    <Switch>
-    <Route exact path='/' component={LandingPage} />
-    <Route exact path='/home' component={HomePage} />
-    <Route exact path='/detail/:id' component={DetailPage} />
-    <Route exact path='/create' component={FormPage} /> 
-    </Switch>   
+      <div>
+
+{pathname === "/" ? null : (
+  <div>
+  <Navbar />
+  </div>
+  )}
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/create" element={<FormPage />} />
+      </Routes>
+    </div>
   );
 }
 

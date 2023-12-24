@@ -6,7 +6,7 @@ const URL="https://api.thedogapi.com/v1/breeds/"
 const getAllBreed= async (req, res)=>{
   // ${API_KEY}
     try {
-        const response = await axios.get(`${URL}`);
+        const response = await axios.get(`${URL}${API_KEY}`);
         const responseData=response.data
         
         const externalApi = responseData.map((dog) => {
