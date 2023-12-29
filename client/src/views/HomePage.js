@@ -12,6 +12,7 @@ import Cards from "../components/Cards/Cards.jsx";
 const HomePage = () => {
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.allDogs);
+  const filteredDogs = useSelector((state) => state.filteredDogs);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
@@ -31,14 +32,15 @@ const HomePage = () => {
   
   const indexOfFirstDog = indexOfLastDog - dogsPerPage;
   
-  const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
+  const dogsToDisplay = filteredDogs.length > 0 ? filteredDogs : allDogs;
+  const currentDogs = dogsToDisplay.slice(indexOfFirstDog, indexOfLastDog);
 
   // navegacion paginado
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  const pages = Math.ceil(allDogs.length / dogsPerPage);
+  const pages = Math.ceil(dogsToDisplay.length / dogsPerPage);
   const buttons = [];
   
   for (let i = 0; i < pages; i++) {

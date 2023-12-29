@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 
 const Card = (props) => {
-  const { id, name, image, temperaments, weight, height, life_span } = props;
-  
+  const { id, name, image, temperaments, weight, height, life_span, temperamentList } = props;
+  const imgUrl= image.url || image;
   return (
   <div className={style.card}>
     <div className={style.div1}>
@@ -13,8 +13,8 @@ const Card = (props) => {
       <h4 className={style.id}>{id}</h4>
       </Link> 
       <h2>{name}</h2>
-      <img src={image.url} alt="dog" className={style.img} />
-      <p className={style.p}>{temperaments}</p>
+      <img src={imgUrl} alt="dog" className={style.img} />
+      <p className={style.p}>{temperaments || temperamentList}</p>
       {/* <p>Weight (Imperial): {weight.imperial}</p>
       <p>Weight (Metric): {weight.metric}</p>
       <p>Height (Imperial): {height.imperial}</p>

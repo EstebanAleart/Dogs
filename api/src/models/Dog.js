@@ -17,14 +17,23 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    height: {
-      type: DataTypes.STRING,
+    height_min: {
+      type: DataTypes.NUMBER,
     },
-    weight: {
-      type: DataTypes.STRING,
+    height_max: {
+      type: DataTypes.NUMBER,
+    },
+    weight_min: {
+      type: DataTypes.NUMBER,
+    },
+    weight_max: {
+      type: DataTypes.NUMBER,
     },
     life_span: {
       type: DataTypes.STRING,
+    },
+    temperamentList: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
     },
   }, {
     timestamps: false,

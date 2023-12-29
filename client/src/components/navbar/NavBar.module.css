@@ -9,6 +9,17 @@
     padding: 0 20px;
     flex-wrap: wrap;
 }
+.selectContainer{
+    display: flex;
+    align-items: center;
+    height: auto;
+    min-height: 80px;
+    color: rgb(255, 160, 17);
+    padding: 0 20px;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
 .button{
     background-color: rgb(255, 160, 17);
