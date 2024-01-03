@@ -6,7 +6,7 @@ const initialState = {
   filteredDogs: [],
 };
 
-console.log(initialState.temperaments);
+
 
 const dogsReducer = (state = initialState, action) => {
   switch (action.type) {

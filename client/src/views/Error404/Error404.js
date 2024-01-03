@@ -7,7 +7,7 @@ const Error404 = () => {
       <div className={style.container} >
         <h1>404 - Not Found</h1>
         <p>Oops! The page you are looking for might be unavailable.</p>
-        <img className={style.img} src={img} alt="404 Image" />
+        <img className={style.img} src={img} alt="404 error image" />
       </div>
     );
   }
