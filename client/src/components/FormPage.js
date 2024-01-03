@@ -114,7 +114,7 @@ const FormPage = () => {
         weight_max: "",
         life_span: "",
         image: "",
-        temperamentList: "",
+        temperamentList: [],
       });
     } else {
       alert("Please fill out all fields correctly before submitting");
@@ -145,12 +145,13 @@ const FormPage = () => {
       window.alert(`The following temperaments are not valid: ${invalidTemperaments.join(", ")}`)
       
     } else {
-      setErrors({
-        ...errors,
-        temperamentList: "",
-      });
+      // setErrors({
+      //   ...errors,
+      //   temperamentList: "",
+      // });
+      window.alert("All temperaments are valid");
     }
-    window.alert("All temperaments are valid");
+    
   };
   
   
@@ -171,6 +172,12 @@ const FormPage = () => {
           />
         </div>
         <div>{errors.name && <p>{errors.name}</p>}</div>
+
+        <div style={{display:"flex"}}>
+        <input className={style.formInput}   type="text" value={form.temperamentList} name="temperamentList"  placeholder="Temperaments  Exam:Loyal,playfull" onChange={(e) => handleChange(e)}/>
+        <button type="button" onClick={handleTemperamentValidation}>Validate Temperaments</button>
+        </div>
+        <div>{errors.temperamentList && <p>{errors.temperamentList}</p>}</div>
 
         <div>
           <div>
@@ -253,12 +260,6 @@ const FormPage = () => {
           />
         </div>
         <div>{errors.image && <p>{errors.image}</p>}</div>
-        
-        <div style={{display:"flex"}}>
-        <input type="text" value={form.temperamentList} name="temperamentList"  placeholder="Temperaments  Exam:Loyal,playfull" onChange={(e) => handleChange(e)}/>
-        <button type="button" onClick={handleTemperamentValidation}>Validate Temperaments</button>
-        </div>
-        <div>{errors.temperamentList && <p>{errors.temperamentList}</p>}</div>
 
         <div>
           <button className={style.formSubmit} type="submit" form="form" >

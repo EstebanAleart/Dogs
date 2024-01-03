@@ -1,5 +1,6 @@
 const axios=require("axios");
 const { Dog }=require("../db");
+const normalizeData=require("../handler/normalizeData");
 const {Op}=require("sequelize");
 const { API_KEY } = process.env;
 
@@ -39,11 +40,13 @@ const getDogsByQuery=async (req,res)=>{
               },
             },
           });
+
+          const dbNormalized= dbResult.map(norm=>normalizeData(norm))
           
 
         
       
-          const combined= [...externalApi,...dbResult]
+          const combined= [...externalApi,...dbNormalized]
       
           combined.length > 0 ? res.status(200).json(combined) : res.status(404).json({ error: "Not Found" });
 

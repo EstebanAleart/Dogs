@@ -6,10 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { orderDogsByName, searchDogsByName , orderDogsByWeight,getTemperaments,filterDogsByTemperament, filterDogsByOrigin} from "../../Redux/actions";
 import { useLocation } from "react-router-dom";
 
+
 const Navbar = () => {
+  
   
   const dispatch=useDispatch()
   const location=useLocation()
+  
   const[aux,setAux]=useState(false)
   const [input, setInput] = useState({
     name: "",
@@ -23,7 +26,7 @@ const Navbar = () => {
   const temp = useSelector((state) => state.temperaments);
   const temp2 = [...temp];
  
-
+  
 
 
   const handleOrderN= (event)=>{
@@ -111,12 +114,17 @@ const Navbar = () => {
     }
   }
 
+  const handleHome=()=>{
+    onSearch(input.name= " ")
+};
+
+
 
   return (
     <nav className={style.container}>
       <div>
         <Link to="/home">
-        <button className={style.button}>Home</button>
+        <button className={style.button} onClick={handleHome} >Home</button>
         </Link>
        
         <Link to="/create">
