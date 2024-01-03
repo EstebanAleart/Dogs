@@ -66,9 +66,11 @@ const HomePage = () => {
   
 
   return (
-    <div className={style.container}>
+    <div className={style.mainContainer}>
+    <div className={style.containerC}>
 
       <Cards allDogs={currentDogs} />
+      </div>
       <div  >
         {buttons}
       </div>

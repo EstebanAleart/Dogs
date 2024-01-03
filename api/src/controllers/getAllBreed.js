@@ -18,7 +18,6 @@ const getAllBreed = async (req, res) => {
       }
       return { id, name, image, height, weight, life_span, breed_group, temperaments };
     });
-
     
     const dogsFromDatabase = await Dog.findAll();
     const normalizedDogsFromDatabase = dogsFromDatabase.map(dog => normalizeData(dog));

@@ -11,8 +11,24 @@
       radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
       repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
       radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    height: 100vh;
+    height: 140vh;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem; 
+    font-weight: 700;
+    color:#f7ba2b;
+
+}
+
+.title{
+    color:#f7ba2b;
+    font-size: 3rem; 
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 0 10px #f7ba2b, 0 0 20px #f7ba2b, 0 0 40px #f7ba2b, 0 0 80px #f7ba2b, 0 0 120px #f7ba2b, 0 0 160px #f7ba2b;
     
   }
